@@ -1,0 +1,21 @@
+.body-home-page{
+    width: auto;
+    background-color: #06283D;
+    height: auto;
+}
+.header-home-page{
+    border: 1px solid;
+    width: auto;
+    height: auto;
+    position: absolute;
+}
+.container-button-logo{
+    padding: 5%;
+    width: auto;
+    color: #ffff;
+    font-size: 210%;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+
+    
+}
