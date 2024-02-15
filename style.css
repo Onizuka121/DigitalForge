@@ -2,20 +2,61 @@
     width: auto;
     background-color: #06283D;
     height: auto;
+    font-family: 'Courier New', Courier, monospace;
 }
 .header-home-page{
-    border: 1px solid;
+    display: flex;
     width: auto;
-    height: auto;
-    position: absolute;
+    padding: 2%;
+    height: 50px;
+    border-radius: 20px;
+   background-color: #256D85;
 }
 .container-button-logo{
-    padding: 5%;
-    width: auto;
+    padding: 2%;
+    width: 50%;
     color: #ffff;
     font-size: 210%;
+    align-self: center;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
 
     
+}
+.container-singup-singnin{
+    height: 30px;
+    align-self: center;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    font-weight: bold;
+    font-size: 140%;
+    justify-content: right;
+}
+.singin{
+    color: aliceblue;
+}
+.singin:hover{
+    background-color: #06283D;
+
+}
+.singup{
+    background-color: #DFF6FF;
+}
+.singup,.singin{
+    padding: 3%;
+    align-self: center;
+    height: 30px;
+    cursor: pointer;
+    max-height: 30px;
+    border-radius: 20px;
+
+}
+
+.container1{
+    width: 50%;
+    font-size: 300%;
+    padding: 2%;
+    color: #DFF6FF;
 }
