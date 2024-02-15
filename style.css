@@ -1,62 +1,53 @@
 .body-home-page{
-    width: auto;
-    background-color: #06283D;
-    height: auto;
-    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    background-image: url("image3.jpg");
+    background-size: auto;
+    overflow-x: hidden;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .header-home-page{
     display: flex;
-    width: auto;
-    padding: 2%;
-    height: 50px;
-    border-radius: 20px;
-   background-color: #256D85;
+    position: fixed;
+    width: 95%;
+    background-color: rgba(0, 0, 0, 0.452);
+    padding: 20px;
 }
 .container-button-logo{
-    padding: 2%;
-    width: 50%;
     color: #ffff;
+    width: 50%;
     font-size: 210%;
     align-self: center;
     font-weight: bold;
-    font-family: 'Courier New', Courier, monospace;
-
-    
 }
 .container-singup-singnin{
-    height: 30px;
     align-self: center;
-    width: 50%;
     display: flex;
     flex-direction: row;
-    gap: 10%;
+    gap: 3%;
+    width: 50%;
     font-weight: bold;
     font-size: 140%;
     justify-content: right;
 }
-.singin{
-    color: aliceblue;
-}
+
 .singin:hover{
-    background-color: #06283D;
+    background-color: #f27a3541;
 
 }
 .singup{
-    background-color: #DFF6FF;
+    background-color: #F27B35;
 }
 .singup,.singin{
-    padding: 3%;
+    color: aliceblue;
+    padding: 15px;
     align-self: center;
-    height: 30px;
     cursor: pointer;
-    max-height: 30px;
-    border-radius: 20px;
-
+    border-radius: 15px;
 }
 
 .container1{
     width: 50%;
-    font-size: 300%;
-    padding: 2%;
+    font-size: 450%;
+    padding: 5%;
     color: #DFF6FF;
 }
