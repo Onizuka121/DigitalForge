@@ -1,9 +1,9 @@
 .body-home-page{
-    margin: 0;
-    padding: 1%;
     width: 100%;
+    outline: none;
+    overflow: hidden;
     height: 100%;
-   background-color: rgba(0, 0, 0, 0.925);
+    background-color: rgba(0, 0, 0, 0.925);
     overflow-x: hidden;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -32,10 +32,8 @@
     font-size: 140%;
     justify-content: right;
 }
-
 .singin:hover{
     background-color: #f27a3541;
-
 }
 .singup{
     background-color: #F27B35;
@@ -47,7 +45,6 @@
     cursor: pointer;
     border-radius: 15px;
 }
-
 .container1{
     width: 50%;
     font-size: 450%;
@@ -64,7 +61,6 @@
     height: auto;
     width: 60%;
 }
-
 .form-login-page{
     padding: 5%;
     color: #DFF6FF;
@@ -79,136 +75,18 @@
     height: auto;
     padding: 2px;
 }
-
-.container-main-login-page{
-    display: flex;
-    flex-direction: row;
-    width: 98%;
-    align-items: center;
-    height: 100%;
-
+#serialBodyLogin{
+  display: flex;
+  flex-direction: row;
+  outline:none;
 }
-.container-image-left{
-    margin: auto;
-    width: 65%;
-    height: 650px;
-    background-image: url("image-left.png");
-    background-size: 100% 100%;
+.container-image{
+    width: 70%;
+    margin-top: -10px;
+    margin-left: -10px;
+    height: 950px;
     background-repeat: no-repeat;
-}
-
-.container-form-login{
-    width: 50%;
-}
-
-
-
-
-
-/* login 2 */
-.form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-    border-radius: 25px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  .form .label {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 200%;
-  }
-  .form .label:has(input:focus) .title {
-    top: 0;
-    left: 0;
-    color: #d17842;
-  }
-  .form .label .title {
-    padding: 0 10px;
-    transition: all 300ms;
-    font-size: 60%;
-    color: #8b8e98;
-    font-weight: 700;
-    width: -moz-fit-content;
-    width: fit-content;
-    top: 14px;
-    position: relative;
-    left: 15px;
-  }
-  .form .input-field {
-    width: 75%;
-    height: 50px;
-    text-indent: 15px;
-    border-radius: 15px;
-    outline: none;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: transparent;
-   
-    transition: all 0.3s;
-    caret-color: #d17842;
-    color: #aeaeae;
-  }
-  
-  .form .input-field:hover {
-    border-color: rgba(209, 121, 66, 0.5);
-  }
-  
-  .form .input-field:focus {
-    border-color: #d17842;
-  }
-  .form .split {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    gap: 15px;
-  }
-  .form .split label {
-    width: 130px;
-  }
-  .form .checkout-btn {
-    width: 20%;
-    margin-top: 20px;
-    padding: 20px 0;
-    border-radius: 25px;
-    font-weight: 700;
-    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
-    cursor: pointer;
-    font-size: 20px;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    border: none;
-    justify-content: center;
-    fill: #fff;
-    color: #fff;
-    border: 2px solid transparent;
-    background: #d17842;
-    transition: all 200ms;
-  }
-  .form .checkout-btn:active {
-    scale: 0.95;
-  }
-  
-  .form .checkout-btn:hover {
-    color: #d17842;
-    border: 2px solid #d17842;
-    background: transparent;
-  }
-
-  .p{
-    color: #DFF6FF;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  }
-  .span{
-    color: #d17842;
-    cursor: pointer;
-  }
-
-  
-  
-   
-   
-   
+    background-image: url("img.png");
+    background-size: 100% 100%;
+    float: right;
+}    
