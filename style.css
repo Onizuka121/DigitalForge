@@ -1,19 +1,19 @@
 .body-home-page{
     width: 100%;
     outline: none;
-    overflow: hidden;
-    height: 100%;
+    height: 900px;
     background-color: rgba(0, 0, 0, 0.925);
     overflow-x: hidden;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .header-home-page{
     display: flex;
+    width: auto;
     position: fixed;
-    width: 96%;
+    width: 97.3%;
+    padding: 1%;
     background-color: rgba(61, 59, 59, 0.267);
-    border-radius: 10px;
-    padding: 20px;
+    margin-top: -10px;
 }
 .container-button-logo{
     color: #ffff;
@@ -43,48 +43,46 @@
     padding: 15px;
     align-self: center;
     cursor: pointer;
-    border-radius: 15px;
+    border-radius: 10px;
+}
+
+.container-image-home-page{
+  height: 76%;
+  width: 100%;
+  margin: auto;
+  margin-top: -10px;
+  background-image: url("img-home.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+#serialImage2{
+  background-image: url("image4.png");
+  width: auto;
 }
 .container1{
-    width: 50%;
-    font-size: 450%;
+    width: 90%;
+    height: 20%;
+    font-size: 400%;
     padding: 5%;
     color: #DFF6FF;
 }
-.container-login{
-    display: flex;
-    margin: 0 auto;
-    flex-direction: row;
-    align-self: center;
-    justify-self: center;
-    border-radius: 15px;
-    height: auto;
-    width: 60%;
-}
-.form-login-page{
-    padding: 5%;
-    color: #DFF6FF;
-}
-.container-input{
-    display: flex;
-    flex-direction: column;
-    padding: 1px;
-}
-.input-login-page{
-    width: auto;
-    height: auto;
-    padding: 2px;
-}
+
+
+
 #serialBodyLogin{
   display: flex;
   flex-direction: row;
-  outline:none;
+  height: 920px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .container-image{
-    width: 70%;
+  margin: auto;
+    width: 67%;
     margin-top: -10px;
     margin-left: -10px;
-    height: 950px;
+    height: 100%;
     background-repeat: no-repeat;
     background-image: url("img.png");
     background-size: 100% 100%;
@@ -92,29 +90,28 @@
 }    
 
 .container-login-form{
-    width: auto;
-    align-self: center;
-    height: auto;
     display: flex;
     flex-direction: column;
+    width: 34%;
+    height: 100%;
+    align-self: center;
+    justify-content: center;
+    float: right;
 }
 
 
 /*---------------------------------------------------------*/
 
 .form_container {
-    width: fit-content;
-    height: fit-content;
+    width: auto;
+    height: auto;
     display: flex;
     flex-direction: column;
+    float: right;
     align-self: center;
     justify-self: center;
     gap: 25px;
-    padding: 50px 40px 20px 40px;
-    box-shadow: 0px 106px 42px rgba(0, 0, 0, 0.01),
-      0px 59px 36px rgba(0, 0, 0, 0.05), 0px 26px 26px rgba(0, 0, 0, 0.09),
-      0px 7px 15px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-    border-radius: 11px;
+    padding: 40px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   
@@ -128,7 +125,8 @@
   
   .title {
     margin: 0;
-    font-size: 300%;
+    text-align: center;
+    font-size: 280%;
     font-weight: 700;
     color: #DFF6FF;
   }
@@ -143,11 +141,11 @@
   
   .input_container {
     width: 100%;
-    height: fit-content;
+    height: auto;
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 10px;
   }
   
   .icon {
@@ -182,48 +180,37 @@
   }
   
   .sign-in_btn {
-    width: 100%;
+    width: 50%;
     height: 40px;
-    border: 0;
+    align-self: center;
+    border: none;
     background: #F27B35;
     border-radius: 7px;
     outline: none;
     color: #ffffff;
+    font-size: larger;
     cursor: pointer;
   }
   
   .sign-in_ggl {
-    width: 100%;
-    height: 40px;
+    width: 50%;
+    height: auto;
+    padding: 2%;
     display: flex;
-    align-items: center;
+    align-self: center;
     justify-content: center;
-    gap: 10px;
-    background: #ffffff;
+    background: #ffff;
     border-radius: 7px;
     outline: none;
-    color: #242424;
-    border: 1px solid #e5e5e5;
-    filter: drop-shadow(0px 1px 0px #efefef)
-      drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+    color: #242424ab;
     cursor: pointer;
+    border: none;
   }
-  
-  .sign-in_apl {
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    background: #ffffff;
-    border-radius: 7px;
-    outline: none;
-    color: #ffffff;
-    border: 1px solid #e5e5e5;
-    filter: drop-shadow(0px 1px 0px #efefef)
-      drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
-    cursor: pointer;
+
+
+  .sign-in_ggl span , .sign-in_btn span{
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   }
   
   .separator {
@@ -240,11 +227,76 @@
     width: 100%;
     height: 1px;
     border: 0;
-    background-color: #e8e8e8;
+    background-color: #e8e8e897;
   }
   
   .note {
-    font-size: 0.75rem;
-    color: #8B8E98;
+    font-size: 100%;
+    text-align: center;
+    color: #dff6ff59;
     text-decoration: underline;
+    cursor: pointer;
   }
+  .note:hover{
+    color: #F27B35;
+  }
+
+  #serialNote2{
+    font-size: 100%;
+    text-align: center;
+    color: #dff6ff59;
+    text-decoration: solid;
+    padding: 0;
+    margin-bottom: -5px;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  /* RESPONSIVE */
+  @media screen and (max-width: 1400px) {
+    #serialBodyLogin {
+      flex-direction: column;
+    }
+    .container-login-form{
+      width: 100%;
+    }
+    .container-image{
+      display: none;
+    }
+  }
+
+  @media screen and (max-height: 900px) {
+    #serialBodyLogin{
+      height: 720px;
+      overflow: hidden;
+    }
+    .container-login-form{
+      height: 90%;
+      font-size: 85%;
+    }
+    .container-image{
+      height: 100%;
+    }
+
+
+  }
+
+/*
+  width: 67%;
+    margin-top: -10px;
+    margin-left: -10px;
+    height: 950px;
+    background-repeat: no-repeat;
+    background-image: url("img.png");
+    background-size: 100% 100%;
+    float: right;
+
+    */
