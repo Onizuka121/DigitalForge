@@ -73,12 +73,13 @@
 #serialBodyLogin{
   display: flex;
   flex-direction: row;
-  height: 920px;
+  height: 950px;
   overflow-x: hidden;
   overflow-y: hidden;
 }
+
 .container-image{
-  margin: auto;
+    margin: auto;
     width: 67%;
     margin-top: -10px;
     margin-left: -10px;
@@ -94,10 +95,12 @@
     flex-direction: column;
     width: 34%;
     height: 100%;
-    align-self: center;
     justify-content: center;
     float: right;
 }
+
+
+
 
 
 /*---------------------------------------------------------*/
@@ -113,6 +116,10 @@
     gap: 25px;
     padding: 40px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+
+  #regSerialForm{
+    width: 100%;
   }
   
   .title_container {
@@ -162,7 +169,7 @@
     font-weight: 600;
   }
   
-  .input_field {
+  .input_field ,  .input_field2{
     width: auto;
     font-size: 100%;
     height: 50px;
@@ -175,8 +182,12 @@
     transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
   }
   
-  .input_field:focus {
+  .input_field:focus ,  .input_field2:focus {
     border: 1px solid transparent;
+  }
+
+  .input_field2{
+    padding: 0 0 0 10px;
   }
   
   .sign-in_btn {
@@ -250,6 +261,22 @@
     margin-bottom: -5px;
   }
 
+  .container-main-data{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    width: 100%;
+  }
+
+  .container-fond-data{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+
+
 
 
 
@@ -281,7 +308,7 @@
     .container-login-form{
       height: 90%;
       font-size: 85%;
-    }
+      }
     .container-image{
       height: 100%;
     }
