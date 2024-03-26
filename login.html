@@ -5,16 +5,34 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon"
+  href="https://zammad.com/media/pages/product/features/gitlab-integration/693fc93d4d-1698589015/gitlab_integration.png"
+  type="image/x-icon">
+  <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/footers/footer-2/assets/css/footer-2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
   <title>Login Page</title>
 </head>
 
 <body class="body-home-page" id="serialBodyLogin">
-  <div class="container-image"></div>
-  <div class="container-login-form">
+  <div class="dropdown">
+    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown link
+    </a>
+  
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+  <!--<div class="col float-md-end mb-3 ms-md-3"></div>-->
+  <img src="img.png" class="d-sm-none d-none d-md-none d-xxl-block" style="width: 70%;" alt="...">
+  <div class="col">
     <form class="form_container">
       <div class="title_container">
-        <p class="title">Accedi al tuo Account</p>
+        <p class="title font-monospace">Accedi al tuo Account</p>
         <span class="subtitle">Inizia subito a consultare i migliori computer del mercato. </span>
       </div>
       <br>
@@ -45,7 +63,7 @@
         <input placeholder="Password" title="Inpit title" name="input-name" type="password" class="input_field"
           id="password_field">
       </div>
-      <button title="Accedi al tuo account" type="submit" class="sign-in_btn">
+      <button title="Accedi al tuo account" type="button" class="btn btn-warning fw-bold w-75 mx-auto" onclick="ChangePage('home-page.html')">
         <span>ACCEDI</span>
       </button>
       <div class="separator">
@@ -55,12 +73,15 @@
       </div>
       <p id="serialNote2">Non hai ancora un account?</p>
       <button title="Registrati" type="button" class="sign-in_ggl" onclick="ChangePage('registrazione.html')">
-        <span>Registrati</span>
+        <span>REGISTRATI</span>
       </button>
       <p class="note">Terms of use &amp; Conditions</p>
     </form>
   </div>
 </body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
 <script src="script.js"></script>
 
 </html>
