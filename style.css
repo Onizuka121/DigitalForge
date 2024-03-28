@@ -10,22 +10,50 @@
     font-family:monospace !important;
 }
 
+.img-logo-source{
+  background-color: #21252915;
+  text-align: center;
+  
+  
+}
+.img-logo-source:hover{
+  background-color: #21252921;
+  transition: 0.2s ease-in;
+}
+
+.img-carousel{
+  width: 80%;
+  margin: 0 auto;
+}
+
+.btn-hover-dark-secondary:hover{
+  background-color: #d2a7275c;
+}
+
+#marketPlaceSerial{
+  height: auto;
+}
+
+.text-warning-secondary{
+  color: #916e04e4;
+}
+
 .card{
   background-color: #ffffffe0;
   box-shadow: 0px 0px 20px 3px #00000068;
   height: 100%;
   cursor: pointer;
 }
-.card:hover{
-  border: 2px solid rgb(248, 212, 6);
-}
-#marketPlaceSerial .col{
-
-
+.navbar-brand{
+  font-size: 105%;
 }
 
+.nav-item{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
 .nav-item:hover{
-  background-color: #8b8e9851;
+  background-color: #21252937;
   cursor: pointer;
 }
 .dropdown-menu{
@@ -40,9 +68,9 @@
 }
 
 .hr-menu{
-  color:#8B8E98;
+  color:#21252900;
   margin: 0 auto;
-  width: 99%;
+  width: 90%;
   padding: 0;
 }
 
