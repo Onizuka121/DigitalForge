@@ -1,14 +1,30 @@
-.body-home-page{
-    width: 100%;
-    display: block;
-    outline: none;
-    height: 120vh;
-    background-image: url("back-dark.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-x: hidden;
-    font-family:monospace !important;
+
+@font-face {
+  font-family: "babapro";
+  src: url("BabaPro-Bold.ttf");
 }
+
+
+.font-questrial{
+  font-family: "Questrial", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.babapro-font{
+  font-family: "babapro";
+}
+
+.body-home-page{
+  width: 100%;
+  display: block;
+  outline: none;
+  height: 120vh;
+  background-image: url("back-dark.png");
+  background-size: cover;
+  overflow-x: hidden;
+}
+
 
 .img-logo-source{
   background-color: #21252915;
@@ -150,9 +166,10 @@
 #serialBodyLogin{
   display: flex;
   flex-direction: row;
-  height: 950px;
+  height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
+  
 }
 
 .container-image{
@@ -260,11 +277,12 @@
   }
   
   .input_field:focus ,  .input_field2:focus {
-    border: 1px solid transparent;
+    
   }
 
   .input_field2{
     padding: 0 0 0 10px;
+    width: 100%;
   }
   
   .sign-in_btn {
@@ -293,12 +311,6 @@
     color: #242424ab;
     cursor: pointer;
     border: none;
-  }
-
-
-  .sign-in_ggl span , .sign-in_btn span{
-    font-weight: bold;
-    font-family: monospace;
   }
   
   .separator {
@@ -380,7 +392,9 @@
 
 
 
-
+  #div-reg{
+    width: 35%;
+  }
 
 
 
@@ -395,6 +409,12 @@
     }
     #s6003{
       display: block;
+    }
+  }
+
+  @media screen and (max-width: 1400px) {
+    #div-reg{
+      width: 100%;
     }
   }
 
