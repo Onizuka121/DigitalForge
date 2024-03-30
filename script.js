@@ -54,3 +54,16 @@ function CheckConfPass() {
   document.getElementById("invalidPassword2").style.display = "flex";
   document.getElementById("btn-crea-account-serial").disabled = true;
 }
+
+
+function CheckCategoriaComputer(){
+   let categoria_selected = document.getElementById("selectCategoriaComputer").value;
+   console.log(categoria_selected)
+   if(categoria_selected == "hardware"){
+      document.getElementById("selectTipologiaComputer").selectedIndex = 1;
+      document.getElementById("selectTipologiaComputer").disabled = true;
+   }else{
+    document.getElementById("selectTipologiaComputer").disabled = false;
+    document.getElementById("selectTipologiaComputer").selectedIndex = 0;
+   }
+}

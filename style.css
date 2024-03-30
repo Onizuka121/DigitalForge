@@ -84,11 +84,17 @@
 }
 
 .hr-menu{
-  color:#21252900;
+  color:#f2f7ffd7;
   margin: 0 auto;
   width: 90%;
   padding: 0;
 }
+
+.material-symbols-outlined{
+  padding: 1%;
+}
+
+
 
 #regSerialButton:hover{
   border-color: #f4ce55;
@@ -201,15 +207,11 @@
 
 .form_container {
     width: auto;
-    height: auto;
     display: flex;
     flex-direction: column;
     float: right;
-    align-self: center;
-    justify-self: center;
     gap: 25px;
     padding: 40px;
-    font-family:monospace;
   }
 
   #regSerialForm{
@@ -388,14 +390,13 @@
   }
 
 
-
-
-
-
   #div-reg{
     width: 35%;
   }
 
+  #style-1{
+    height: 725px;
+  }
 
 
   /* RESPONSIVE */
@@ -430,10 +431,19 @@
     .container-image{
       height: 100%;
     }
+    #style-1{
+      height: 465px;
+    }
    
-
-
   }
+  @media screen and (max-height: 1000px) and (max-width : 1500px) {
+   
+    #style-1{
+      height: 530px;
+    }
+   
+  }
+  
 
 /*
   width: 67%;
