@@ -20,9 +20,10 @@
     <title>Passa a PREMIUM - DigitalForge</title>
 </head>
 
-<body class="body-home-page overflow-y-auto d-flex overflow-x-hidden" id="serialBodyLogin">
+<body class="body-home-page overflow-y-auto d-flex" id="serialBodyPayment">
     <div class="container align-self-center pt-5" id="div-pro">
-        <form class="row g-4 container mx-auto rounded bg-dark shadow text-light font-questrial">
+        <form class="row g-2 container mx-auto pb-3 rounded-4 shadow-lg text-light font-questrial"
+            style="background: rgba(2, 2, 2, 0.118)">
             <div class="title_container">
                 <p class="title w-100 align-middle me-4">
                     <span class="material-symbols-outlined align-top text-warning" style="font-size: 110%;">
@@ -35,29 +36,30 @@
                 <br>
             </div>
             <div class="row gap-2">
-                <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off" checked>
+                <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off"
+                    onclick="SetPlan()" checked>
                 <label class="btn col-xl-4 col-10 text-warning border-3 mx-auto" for="option6">
                     <p class="fw-bold">MENSILMENTE</p>
-                    € 10.00 al mese
+                    € 3.00 al mese
                 </label>
-                <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off" >
+                <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off"
+                    onclick="SetPlan(false)">
                 <label class="btn col-xl-4 col-10 text-warning border-3 mx-auto" for="option5">
                     <p class="fw-bold">ANNUALMENTE</p>
-                    € 8.00 al mese
+                    € 24.00 all'anno
                 </label>
             </div>
-            <p class="text-light fs-4">Dettagli sul metodo di pagamento</p>
+            <hr class="mt-4 w-75 mx-auto">
+            <p class="text-light fs-4 text-center">Dettagli sul metodo di pagamento</p>
 
-            <div class="container row gap-3 p-4 mx-auto rounded-4 shadow-lg">
-
-                <div class="col-xl-6 col-11 d-flex gap-2">
+            <div class="container row gap-3 mx-auto justify-content-center">
+                <div class="col-xl-6 col-11 d-flex gap-2 p-0">
                     <div class="col-10">
                         <label for="inputCardNum" class="form-label">Numero carta</label>
                         <input placeholder="1234 1234 1234 1234" title="Inpit title" name="numero-carta" type="tel"
-                            pattern="\d*" class="input_field2 form-control font-questrial" maxlength="19"
-                            id="inputCardNum" required>
+                            class="input_field2 form-control font-questrial" maxlength="19" id="inputCardNum" required>
                     </div>
-                    <div class="col-1 w-10 ps-1 pt-0" style="height: 50px; margin-top: 5px;">
+                    <div class="col-1 w-10 ps-1 p-0" style="height: 50px; margin-top: 5px;">
                         <span class="material-symbols-outlined fs-1 text-warning mt-4" id="cardTipo">
                             credit_card
                         </span>
@@ -73,12 +75,14 @@
                     <label for="scadenza_card" class="form-label">Scadenza</label>
                     <input placeholder="MM/YY" title="Inpit title" name="sacadenza-card" type="text"
                         class="input_field2 form-control font-questrial gap-3" id="scadenza_card"
-                        pattern="(0[1-9]|1[0-2])\/[0-9]{2}" maxlength="5">
+                        pattern="(0[1-9]|1[0-2])\/[0-9]{2}" maxlength="5" required>
                 </div>
                 <div class="col-6 col-xl-2">
-                    <label for="cvc" class="form-label">CVC</label>
-                    <input placeholder="CVC" title="Inpit title" type="tel"
-                        class="input_field2 form-control font-questrial" name="cvc-card" maxlength="4" id="cvc">
+                    <label for="cvc" class="form-label">
+
+                        CVC</label>
+                    <input placeholder="123" title="Inpit title" type="tel"
+                        class="input_field2 form-control font-questrial" name="cvc-card" maxlength="3" id="cvc" required>
                 </div>
                 <div class="col-xl-7">
                     <label for="selectStato" class="form-label">Stato</label>
@@ -338,10 +342,13 @@
                 </div>
 
             </div>
-            <hr>
+            <hr class="mt-4 w-75 mx-auto">
+            <div class="container-fluid">
+                <p class="text-center fw-bold fs-5" id="planScelto">€ 3.00 al mese</p>
+            </div>
             <div class=" col-12 d-flex justify-content-center gap-4">
-                <button type="button" class="btn text-secondary bg-opacity-10" style="border: 1px solid #ffc1078b;"
-                    onclick="ChangePage('login.html')">ANNULLA</button>
+                <button type="button" class="btn text-secondary" style="border: 1px solid #ffc1078b;"
+                    onclick="ChangePage('home-page.html')">ANNULLA</button>
                 <button type="submit" class="btn btn-warning fw-bold" id="btn-crea-account-serial">PROCEDI
                     AL
                     PAGAMENTO</button>

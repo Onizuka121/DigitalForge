@@ -1,5 +1,5 @@
 let id_divs_nav_bar = ["li-mk-ID", "li-ai-ID", "li-pre-ID", "li-aiuto-ID"];
-let id_divs_container = ["serialMARKET-PLACE", "serialAiContainer"];
+let id_divs_container = ["serialMARKET-PLACE", "serialAiContainer","serialPreferitiContainer"];
 
 let div_setted_id = "mkplaceID";
 
@@ -104,16 +104,58 @@ function formatCreditCardNumber() {
   }
 }
 
+if(document.getElementById('inputCardNum') != null){
+  document.getElementById('inputCardNum').addEventListener('input', formatCreditCardNumber);
+  document.getElementById('scadenza_card').addEventListener('input', function(event) {
+    var inputValue = event.target.value;
+    var cleanedInputValue = inputValue.replace(/[^0-9]/g, '');
+    var formattedValue = cleanedInputValue.replace(/(\d{2})(\d{0,2})/, '$1/$2'); 
+    var month = parseInt(cleanedInputValue.substring(0, 2));
+    if (month > 12) {
+      formattedValue = formattedValue.substring(0, formattedValue.length - 1);
+    }
+    event.target.value = formattedValue;
+  });
+}
 
-document.getElementById('inputCardNum').addEventListener('input', formatCreditCardNumber);
-document.getElementById('scadenza_card').addEventListener('input', function(event) {
-  var inputValue = event.target.value;
-  var cleanedInputValue = inputValue.replace(/[^0-9]/g, '');
-  var formattedValue = cleanedInputValue.replace(/(\d{2})(\d{0,2})/, '$1/$2'); 
-  var month = parseInt(cleanedInputValue.substring(0, 2));
-  if (month > 12) {
-    formattedValue = formattedValue.substring(0, formattedValue.length - 1); // Rimuove l'ultimo carattere (il numero di mese inesatto)
+
+
+function SetPlan(plan1 = true){
+  var plan_html = "€ 3.00 al mese"
+  if(!plan1){
+    plan_html = "€ 24.00 all'anno / € 2.00 al mese <span class='badge text-bg-success align-top fs-7'>20% sconto</span>"
   }
-  event.target.value = formattedValue;
+  document.getElementById("planScelto").innerHTML = plan_html;
+  
+  
+}
+
+
+function CancellaPreferito(id_card_preferito){
+  document.getElementById(id_card_preferito).style.display = "none";
+}
+
+/*
+var buttons = document.querySelectorAll(".bookmark-btn");
+
+buttons.forEach(function(button) {
+    button.addEventListener("click",  function() {
+      this.classList.toggle("clicked");
+  });
 });
-//
+*/
+$(document).ready(function () {
+  $('.toast').toast();
+
+  $('.bookmark-btn').click(function () {
+      if ($(this).hasClass('clicked')) {
+        $('.toast.toast-aggiunto').html("<div class='toast-body'> <span class='material-symbols-outlined align-middle'>bookmark_remove</span>Prodotto rimosso tra i preferiti </div>");
+      } else {
+        $('.toast.toast-aggiunto').html("<div class='toast-body'> <span class='material-symbols-outlined align-middle'>bookmark_added</span>Prodotto aggiunto tra i preferiti </div>");
+      }
+      $('.toast.toast-aggiunto').toast('show');
+      $(this).toggleClass('clicked');
+  });
+});
+
+

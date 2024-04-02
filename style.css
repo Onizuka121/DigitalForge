@@ -7,7 +7,20 @@
 #serialAiContainer{
   display: none;
 }
+#serialPreferitiContainer{
+  display: none;
+}
 
+.bookmark-btn.clicked{
+  color:#f4ce55;
+}
+
+.img-preferiti{
+  max-width: 200px;
+  max-height: 200px;
+  justify-self: center;
+  margin: 0 auto;
+}
 #serialMARKET-PLACE{
   display: block;
 }
@@ -16,9 +29,6 @@
   text-shadow: 0 0 0 #212529;
 }
 
-#assistenzaAIFunzione{
-  display: none;
-}
 
 
 .font-questrial{
@@ -59,7 +69,8 @@
 }
 
 .btn-hover-dark-secondary:hover{
-  background-color: #d2a7275c;
+  background-color: #d2a72700;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 #marketPlaceSerial{
@@ -185,13 +196,12 @@
 
 
 
-#serialBodyLogin{
+#serialBodyLogin,#serialBodyPayment{
   display: flex;
   flex-direction: row;
   height: auto;
   overflow-x: hidden;
   overflow-y: hidden;
-  
 }
 
 .container-image{
@@ -443,12 +453,12 @@
       width: 100%;
     }
     #div-pro{
-      width: 100%;
+      width: 90%;
     }
   }
 
   @media screen and (max-height: 700px) {
-    #serialBodyLogin{
+    #serialBodyLogin,#serialBodyPayment{
       height: 950px;
       overflow: auto;
       overflow-x: hidden;

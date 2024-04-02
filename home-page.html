@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/footers/footer-2/assets/css/footer-2.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css"
     integrity="sha512-8RxmFOVaKQe/xtg6lbscU9DU0IRhURWEuiI0tXevv+lXbAHfkpamD4VKFQRto9WgfOJDwOZ74c/s9Yesv3VvIQ=="
@@ -53,7 +55,8 @@
               aria-label="close"></button>
           </div>
           <div class="offcanvas-body">
-            <a class="navbar-brand font-questrial fs-5 text-light align-middle g-3" href="#">
+            <a class="navbar-brand font-questrial fs-5 text-light align-middle g-3" data-bs-dismiss="offcanvas"
+              onclick="HandleAndView('li-mk-ID','serialMARKET-PLACE')">
               <span class="material-symbols-outlined text-warning align-middle">
                 storefront
               </span>
@@ -61,7 +64,8 @@
             </a>
             <br>
             <br>
-            <a class="navbar-brand font-questrial fs-5 text-light align-middle g-3" href="#">
+            <a class="navbar-brand font-questrial fs-5 text-light align-middle g-3" data-bs-dismiss="offcanvas"
+              onclick="HandleAndView('li-ai-ID','serialAiContainer')">
               <span class="material-symbols-outlined text-warning align-middle">
                 robot_2
               </span>
@@ -69,7 +73,8 @@
             </a>
             <br>
             <br>
-            <a class="navbar-brand font-questrial fs-5 text-light align-middle g-3" href="#">
+            <a class="navbar-brand font-questrial fs-5 text-light align-middle g-3" data-bs-dismiss="offcanvas"
+              onclick="HandleAndView('li-pre-ID','serialPreferitiContainer')">
               <span class="material-symbols-outlined text-warning align-middle">
                 bookmark
               </span>
@@ -112,7 +117,8 @@
           </div>
         </div>
         <div class="d-grid gap-2 d-md-block d-none shadow">
-          <button class="btn btn-warning fw-bold font-questrial" type="button" onclick="ChangePage('swap-premium.html')">
+          <button class="btn btn-warning fw-bold font-questrial" type="button"
+            onclick="ChangePage('swap-premium.html')">
             PASSA A PREMIUM
           </button>
           <div class="btn-group">
@@ -174,14 +180,14 @@
               </a>
             </li>
 
-            <li class="nav-item w-100 p-3" id="li-pre-ID" onclick="HandleAndView('li-pre-ID')">
+            <li class="nav-item w-100 p-3" id="li-pre-ID"
+              onclick="HandleAndView('li-pre-ID','serialPreferitiContainer')">
               <a class="navbar-brand font-questrial">
                 <span class="material-symbols-outlined text-warning align-middle">
                   bookmark
                 </span>
                 Preferiti
             </li>
-
             <li class="nav-item w-100 p-3" id="li-aiuto-ID" onclick="HandleAndView('li-aiuto-ID')">
               <a class="navbar-brand font-questrial">
                 <span class="material-symbols-outlined text-warning align-middle">
@@ -190,7 +196,6 @@
                 Aiuto
               </a>
             </li>
-
         </div>
       </div>
       <div class="col bg-dark" id="serialMARKET-PLACE">
@@ -199,7 +204,7 @@
             <a class="navbar-brand font-questrial fs-3 text-dark d-none d-sm-block fw-bold ">Market-place</a>
             <form class="d-flex" role="search" style="width: auto; min-width: 40% !important;">
               <input class="form-control form-control-sm me-2 fw-bold fs-6 w-100 outline-none font-questrial"
-                type="search" placeholder="Cerca prodotto" aria-label="Search">
+                type="search" placeholder="Cerca prodotto" aria-label="Search" name="ricerca_user">
               <button class="btn btn-dark font-questrial" type="submit">
                 <span class="material-symbols-outlined text-warning align-middle">
                   search
@@ -365,11 +370,19 @@
                           visibility
                         </span>
                       </button>
-                      <button type="button" class="btn btn-hover-dark-secondary">
-                        <span class="material-symbols-outlined align-middle">
-                          bookmark
-                        </span>
+
+                      <button type="button" class="btn btn-hover-dark-secondary bookmark-btn">
+                        <span class="material-symbols-outlined align-middle">bookmark</span>
                       </button>
+                      <div class="toast-container position-fixed bottom-0 end-0 p-3 font-questrial">
+                        <div class="row">
+                          <div class="col-auto">
+                            <div class="toast toast-aggiunto p-1" role="alert" aria-live="assertive" aria-atomic="true">
+                              
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       <!-- Modal -->
                       <div class="modal fade" id="modale-prodotto-1" data-bs-backdrop="static" data-bs-keyboard="false"
                         tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -452,7 +465,6 @@
                                     <i class="fa fa-link" aria-hidden="true"></i>
                                     Più dettagli
                                   </button>
-
                                 </div>
                               </nav>
 
@@ -495,7 +507,7 @@
                           visibility
                         </span>
                       </button>
-                      <button type="button" class="btn btn-hover-dark-secondary">
+                      <button type="button" class="btn btn-hover-dark-secondary bookmark-btn">
                         <span class="material-symbols-outlined align-middle">
                           bookmark
                         </span>
@@ -1062,17 +1074,430 @@
           <!-- OUTPUT GPT OPEN AI -->
           <div class="container-fluid vstack" id="assistenzaAIFunzione">
             <div class="container-fluid">
-              
+
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <div class="col bg-dark" id="serialPreferitiContainer">
+        <nav class="navbar border-top bg-warning border-warning rounded">
+          <div class="container-fluid">
+            <a class="navbar-brand font-questrial fs-3 text-dark d-none d-sm-block fw-bold">
+              Preferiti
+            </a>
+            <form class="d-flex mx-auto" role="search" style="width: auto; min-width: 50% !important;">
+              <input class="form-control form-control-sm me-2 fw-bold fs-6 w-100 outline-none font-questrial"
+                type="search" placeholder="Cerca tra i tuoi preferiti" aria-label="Search"
+                name="ricerca_user_preferiti">
+              <button class="btn btn-dark font-questrial" type="submit">
+                <span class="material-symbols-outlined text-warning align-middle">
+                  search
+                </span>
+              </button>
+            </form>
+          </div>
+        </nav>
+        <div class="container-fluid overflow-y-auto bg-dark rounded p-4 mt-4" id="style-1">
+          <div class="container-fluid vstack gap-4" style="max-width: 840px;">
+            <div class="card mb-3" id="preferito1_id_db">
+              <span
+                class="position-absolute top-0 font-questrial fw-bold fs-6 start-50 translate-middle badge text-dark rounded-pill bg-warning">
+                AGGIUNTO 3 GIORNI FA
+              </span>
+              <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center">
+                  <img src="https://themewagon.github.io/electro/img/product03.png"
+                    class="img-fluid mx-auto img-preferiti" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="text-center"><small class="text-body-secondary font-questrial">COMPUTER LAPTOP</small>
+                    </h6>
+                    <h5 class="card-title fw-bold fs-4 text-center font-questrial">Apple MacBook Air Test 1</h5>
+                    <h6 class="font-questrial fw-bold text-warning-secondary text-center fs-5">$1700.30</h6>
+                    <hr>
+                    <div class="container-fluid d-flex justify-content-center gap-5">
+                      <button type="button" class="btn btn-hover-dark-secondary rounded-5 p-3" data-bs-toggle="modal"
+                        data-bs-target="#modale-prodotto-1-preferiti">
+                        <span class="material-symbols-outlined align-middle">
+                          visibility
+                        </span>
+                      </button>
+                      <button type="button" class="btn btn-hover-dark-secondary rounded-5 p-3"
+                        onclick="CancellaPreferito('preferito1_id_db')">
+                        <span class="material-symbols-outlined align-middle">
+                          cancel
+                        </span>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="modale-prodotto-1-preferiti" data-bs-backdrop="static"
+                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5 font-questrial fw-bold" id="staticBackdropLabel">Apple MacBook
+                                Air <span class="badge text-bg-warning text-dark">NUOVO</span></h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div id="carouselExampleDark2" class="carousel carousel-dark slide">
+                                <div class="carousel-indicators">
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active" data-bs-interval="1000">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+                                  </div>
+                                  <div class="carousel-item" data-bs-interval="1000">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+                                  </div>
+                                </div>
+                                <br>
+                                <button class="carousel-control-prev" type="button"
+                                  data-bs-target="#carouselExampleDark2" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                  data-bs-target="#carouselExampleDark2" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                              </div>
+                              <div class="card-body">
+                                <h6 class="text-center"><small class="text-body-secondary font-questrial">COMPUTER
+                                    LAPTOP</small>
+                                </h6>
+                                <h5 class="card-title fw-bold fs-4 text-center font-questrial">Apple MacBook Air</h5>
+                                <h6 class="font-questrial fw-bold text-warning-secondary text-center fs-5">$1700.30</h6>
+
+                                <hr>
+                                <p class="fw-bold fs-5 font-questrial text-center">Descrizione</p>
+
+                                <ul class="list-group font-questrial shadow">
+                                  <li class="list-group-item">Chip Apple M3 con CPU 8‑core</li>
+                                  <li class="list-group-item">GPU 8‑core e Neural Engine 16‑core</li>
+                                  <li class="list-group-item">8GB di memoria unificata</li>
+                                  <li class="list-group-item">Unità SSD da 256GB</li>
+                                  <li class="list-group-item">Display Liquid Retina da 13,6" con True Tone²</li>
+                                  <li class="list-group-item">Videocamera FaceTime HD a 1080p</li>
+                                  <li class="list-group-item">Porta MagSafe 3 per la ricarica</li>
+                                  <li class="list-group-item">Due porte Thunderbolt - USB 4</li>
+                                </ul>
+
+                              </div>
+                              <nav class="navbar">
+                                <div class="container-fluid d-flex w-100 p-1">
+                                  <a class="navbar-brand img-logo-source p-2 rounded" href="https://www.apple.com/it/">
+                                    <img
+                                      src="https://w7.pngwing.com/pngs/121/286/png-transparent-apple-logo-computer-icons-apple-logo-company-heart-logo-thumbnail.png"
+                                      alt="Logo" width="20" height="20"
+                                      class="d-inline-block align-text-center rounded mb-1">
+                                    Apple
+                                  </a>
+                                  <button type="button" class="btn img-logo-source font-questrial">
+                                    <i class="fa fa-link" aria-hidden="true"></i>
+                                    Più dettagli
+                                  </button>
+
+                                </div>
+                              </nav>
+
+
+                            </div>
+                            <div class="modal-footer w-100">
+                              <button type="button" class="btn btn-warning font-questrial fw-bold">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                COMPRA</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3" id="preferito2_id_db">
+              <span
+                class="position-absolute top-0 font-questrial fw-bold fs-6 start-50 translate-middle badge text-dark rounded-pill bg-warning">
+                AGGIUNTO 2 MESI FA
+              </span>
+              <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center">
+                  <img src="https://themewagon.github.io/electro/img/product03.png"
+                    class="img-fluid mx-auto img-preferiti" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="text-center"><small class="text-body-secondary font-questrial">COMPUTER LAPTOP</small>
+                    </h6>
+                    <h5 class="card-title fw-bold fs-4 text-center font-questrial">Apple MacBook Air</h5>
+                    <h6 class="font-questrial fw-bold text-warning-secondary text-center fs-5">$1700.30</h6>
+                    <hr>
+                    <div class="container-fluid d-flex justify-content-center gap-5">
+                      <button type="button" class="btn btn-hover-dark-secondary rounded-5 p-3" data-bs-toggle="modal"
+                        data-bs-target="#modale-prodotto-1-preferiti">
+                        <span class="material-symbols-outlined align-middle">
+                          visibility
+                        </span>
+                      </button>
+                      <button type="button" class="btn btn-hover-dark-secondary rounded-5 p-3"
+                        onclick="CancellaPreferito('preferito2_id_db')">
+                        <span class="material-symbols-outlined align-middle">
+                          cancel
+                        </span>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="modale-prodotto-1-preferiti" data-bs-backdrop="static"
+                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5 font-questrial fw-bold" id="staticBackdropLabel">Apple MacBook
+                                Air <span class="badge text-bg-warning text-dark">NUOVO</span></h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div id="carouselExampleDark2" class="carousel carousel-dark slide">
+                                <div class="carousel-indicators">
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active" data-bs-interval="1000">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+                                  </div>
+                                  <div class="carousel-item" data-bs-interval="1000">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+                                  </div>
+                                </div>
+                                <br>
+                                <button class="carousel-control-prev" type="button"
+                                  data-bs-target="#carouselExampleDark2" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                  data-bs-target="#carouselExampleDark2" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                              </div>
+                              <div class="card-body">
+                                <h6 class="text-center"><small class="text-body-secondary font-questrial">COMPUTER
+                                    LAPTOP</small>
+                                </h6>
+                                <h5 class="card-title fw-bold fs-4 text-center font-questrial">Apple MacBook Air</h5>
+                                <h6 class="font-questrial fw-bold text-warning-secondary text-center fs-5">$1700.30</h6>
+
+                                <hr>
+                                <p class="fw-bold fs-5 font-questrial text-center">Descrizione</p>
+
+                                <ul class="list-group font-questrial shadow">
+                                  <li class="list-group-item">Chip Apple M3 con CPU 8‑core</li>
+                                  <li class="list-group-item">GPU 8‑core e Neural Engine 16‑core</li>
+                                  <li class="list-group-item">8GB di memoria unificata</li>
+                                  <li class="list-group-item">Unità SSD da 256GB</li>
+                                  <li class="list-group-item">Display Liquid Retina da 13,6" con True Tone²</li>
+                                  <li class="list-group-item">Videocamera FaceTime HD a 1080p</li>
+                                  <li class="list-group-item">Porta MagSafe 3 per la ricarica</li>
+                                  <li class="list-group-item">Due porte Thunderbolt - USB 4</li>
+                                </ul>
+
+                              </div>
+                              <nav class="navbar">
+                                <div class="container-fluid d-flex w-100 p-1">
+                                  <a class="navbar-brand img-logo-source p-2 rounded" href="https://www.apple.com/it/">
+                                    <img
+                                      src="https://w7.pngwing.com/pngs/121/286/png-transparent-apple-logo-computer-icons-apple-logo-company-heart-logo-thumbnail.png"
+                                      alt="Logo" width="20" height="20"
+                                      class="d-inline-block align-text-center rounded mb-1">
+                                    Apple
+                                  </a>
+                                  <button type="button" class="btn img-logo-source font-questrial">
+                                    <i class="fa fa-link" aria-hidden="true"></i>
+                                    Più dettagli
+                                  </button>
+
+                                </div>
+                              </nav>
+
+
+                            </div>
+                            <div class="modal-footer w-100">
+                              <button type="button" class="btn btn-warning font-questrial fw-bold">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                COMPRA</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3" id="preferito3_id_db">
+              <span
+                class="position-absolute top-0 font-questrial fw-bold fs-6 start-50 translate-middle badge text-dark rounded-pill bg-warning">
+                AGGIUNTO 1 ANNO FA
+              </span>
+              <div class="row g-0">
+                <div class="col-md-4 d-flex justify-content-center">
+                  <img src="https://themewagon.github.io/electro/img/product03.png"
+                    class="img-fluid mx-auto img-preferiti" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h6 class="text-center"><small class="text-body-secondary font-questrial">COMPUTER LAPTOP</small>
+                    </h6>
+                    <h5 class="card-title fw-bold fs-4 text-center font-questrial">Apple MacBook Air</h5>
+                    <h6 class="font-questrial fw-bold text-warning-secondary text-center fs-5">$1700.30</h6>
+                    <hr>
+                    <div class="container-fluid d-flex justify-content-center gap-5">
+                      <button type="button" class="btn btn-hover-dark-secondary rounded-5 p-3" data-bs-toggle="modal"
+                        data-bs-target="#modale-prodotto-1-preferiti">
+                        <span class="material-symbols-outlined align-middle">
+                          visibility
+                        </span>
+                      </button>
+                      <button type="button" class="btn btn-hover-dark-secondary rounded-5 p-3"
+                        onclick="CancellaPreferito('preferito3_id_db')">
+                        <span class="material-symbols-outlined align-middle">
+                          cancel
+                        </span>
+                      </button>
+                      <!-- Modal -->
+                      <div class="modal fade" id="modale-prodotto-1-preferiti" data-bs-backdrop="static"
+                        data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h1 class="modal-title fs-5 font-questrial fw-bold" id="staticBackdropLabel">Apple MacBook
+                                Air <span class="badge text-bg-warning text-dark">NUOVO</span></h1>
+                              <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                              <div id="carouselExampleDark2" class="carousel carousel-dark slide">
+                                <div class="carousel-indicators">
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                  <button type="button" data-bs-target="#carouselExampleDark2" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active" data-bs-interval="1000">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+                                  </div>
+                                  <div class="carousel-item" data-bs-interval="1000">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img src="https://themewagon.github.io/electro/img/product03.png"
+                                      class="d-block img-carousel" alt="...">
+                                  </div>
+                                </div>
+                                <br>
+                                <button class="carousel-control-prev" type="button"
+                                  data-bs-target="#carouselExampleDark2" data-bs-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                </button>
+                                <button class="carousel-control-next" type="button"
+                                  data-bs-target="#carouselExampleDark2" data-bs-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                </button>
+                              </div>
+                              <div class="card-body">
+                                <h6 class="text-center"><small class="text-body-secondary font-questrial">COMPUTER
+                                    LAPTOP</small>
+                                </h6>
+                                <h5 class="card-title fw-bold fs-4 text-center font-questrial">Apple MacBook Air</h5>
+                                <h6 class="font-questrial fw-bold text-warning-secondary text-center fs-5">$1700.30</h6>
+
+                                <hr>
+                                <p class="fw-bold fs-5 font-questrial text-center">Descrizione</p>
+
+                                <ul class="list-group font-questrial shadow">
+                                  <li class="list-group-item">Chip Apple M3 con CPU 8‑core</li>
+                                  <li class="list-group-item">GPU 8‑core e Neural Engine 16‑core</li>
+                                  <li class="list-group-item">8GB di memoria unificata</li>
+                                  <li class="list-group-item">Unità SSD da 256GB</li>
+                                  <li class="list-group-item">Display Liquid Retina da 13,6" con True Tone²</li>
+                                  <li class="list-group-item">Videocamera FaceTime HD a 1080p</li>
+                                  <li class="list-group-item">Porta MagSafe 3 per la ricarica</li>
+                                  <li class="list-group-item">Due porte Thunderbolt - USB 4</li>
+                                </ul>
+
+                              </div>
+                              <nav class="navbar">
+                                <div class="container-fluid d-flex w-100 p-1">
+                                  <a class="navbar-brand img-logo-source p-2 rounded" href="https://www.apple.com/it/">
+                                    <img
+                                      src="https://w7.pngwing.com/pngs/121/286/png-transparent-apple-logo-computer-icons-apple-logo-company-heart-logo-thumbnail.png"
+                                      alt="Logo" width="20" height="20"
+                                      class="d-inline-block align-text-center rounded mb-1">
+                                    Apple
+                                  </a>
+                                  <button type="button" class="btn img-logo-source font-questrial">
+                                    <i class="fa fa-link" aria-hidden="true"></i>
+                                    Più dettagli
+                                  </button>
+
+                                </div>
+                              </nav>
+
+
+                            </div>
+                            <div class="modal-footer w-100">
+                              <button type="button" class="btn btn-warning font-questrial fw-bold">
+                                <i class="fa fa-shopping-bag" aria-hidden="true"></i>
+                                COMPRA</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 
-
+<!-- SCRIPTS JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="script.js"></script>
 
 </html>
