@@ -4,6 +4,22 @@
   src: url("BabaPro-Bold.ttf");
 }
 
+#serialAiContainer{
+  display: none;
+}
+
+#serialMARKET-PLACE{
+  display: block;
+}
+.sparkle{
+  color: transparent;
+  text-shadow: 0 0 0 #212529;
+}
+
+#assistenzaAIFunzione{
+  display: none;
+}
+
 
 .font-questrial{
   font-family: "Questrial", sans-serif;
@@ -393,11 +409,20 @@
   #div-reg{
     width: 35%;
   }
+  #div-pro{
+    width: 50%;
+  }
 
   #style-1{
     height: 725px;
   }
 
+  #cardTipo{
+    background-image: url("visaa.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 60px;
+  }
 
   /* RESPONSIVE */
   @media screen and (max-width: 1400px) {
@@ -417,12 +442,16 @@
     #div-reg{
       width: 100%;
     }
+    #div-pro{
+      width: 100%;
+    }
   }
 
   @media screen and (max-height: 700px) {
     #serialBodyLogin{
       height: 950px;
       overflow: auto;
+      overflow-x: hidden;
     }
     .container-login-form{
       height: 90%;
@@ -441,8 +470,11 @@
     #style-1{
       height: 530px;
     }
+    
    
   }
+  
+  
   
 
 /*
