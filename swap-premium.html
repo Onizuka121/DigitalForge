@@ -17,7 +17,7 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
     <link rel="stylesheet" href="style.css">
-    <title>Passa a PREMIUM - DigitalForge</title>
+    <title>Dettagli Carta - DigitalForge</title>
 </head>
 
 <body class="body-home-page overflow-y-auto d-flex" id="serialBodyPayment">
@@ -29,29 +29,13 @@
                     <span class="material-symbols-outlined align-top text-warning" style="font-size: 110%;">
                         workspace_premium
                     </span>
-                    Passa a premium
+                    Aggiungi metodo di pagamento
                 </p>
                 <span class="subtitle font-questrial">Ottieni subito un assistenza grazie all' intelligenza
                     artificiale</span>
                 <br>
             </div>
-            <div class="row gap-2">
-                <input type="radio" class="btn-check" name="options-base" id="option6" autocomplete="off"
-                    onclick="SetPlan()" checked>
-                <label class="btn col-xl-4 col-10 text-warning border-3 mx-auto" for="option6">
-                    <p class="fw-bold">MENSILMENTE</p>
-                    € 3.00 al mese
-                </label>
-                <input type="radio" class="btn-check" name="options-base" id="option5" autocomplete="off"
-                    onclick="SetPlan(false)">
-                <label class="btn col-xl-4 col-10 text-warning border-3 mx-auto" for="option5">
-                    <p class="fw-bold">ANNUALMENTE</p>
-                    € 24.00 all'anno
-                </label>
-            </div>
             <hr class="mt-4 w-75 mx-auto">
-            <p class="text-light fs-4 text-center">Dettagli sul metodo di pagamento</p>
-
             <div class="container row gap-3 mx-auto justify-content-center">
                 <div class="col-xl-6 col-11 d-flex gap-2 p-0">
                     <div class="col-10">
@@ -82,7 +66,8 @@
 
                         CVC</label>
                     <input placeholder="123" title="Inpit title" type="tel"
-                        class="input_field2 form-control font-questrial" name="cvc-card" maxlength="3" id="cvc" required>
+                        class="input_field2 form-control font-questrial" name="cvc-card" maxlength="3" id="cvc"
+                        required>
                 </div>
                 <div class="col-xl-7">
                     <label for="selectStato" class="form-label">Stato</label>
@@ -340,18 +325,13 @@
                         <option value="Zimbabwe">Zimbabwe</option>
                     </select>
                 </div>
-
             </div>
             <hr class="mt-4 w-75 mx-auto">
-            <div class="container-fluid">
-                <p class="text-center fw-bold fs-5" id="planScelto">€ 3.00 al mese</p>
-            </div>
+
             <div class=" col-12 d-flex justify-content-center gap-4">
                 <button type="button" class="btn text-secondary" style="border: 1px solid #ffc1078b;"
                     onclick="ChangePage('home-page.html')">ANNULLA</button>
-                <button type="submit" class="btn btn-warning fw-bold" id="btn-crea-account-serial">PROCEDI
-                    AL
-                    PAGAMENTO</button>
+                <button type="submit" class="btn btn-warning fw-bold" id="btn-crea-account-serial">CONFERMA</button>
             </div>
         </form>
     </div>

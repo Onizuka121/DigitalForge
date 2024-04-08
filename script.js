@@ -1,5 +1,12 @@
 let id_divs_nav_bar = ["li-mk-ID", "li-ai-ID", "li-pre-ID", "li-aiuto-ID"];
-let id_divs_container = ["serialMARKET-PLACE", "serialAiContainer","serialPreferitiContainer"];
+let id_divs_container = [
+  "serialMARKET-PLACE",
+  "serialAiContainer",
+  "serialPreferitiContainer",
+];
+
+//da levare -->
+formatCreditCardNumber();
 
 let div_setted_id = "mkplaceID";
 
@@ -40,7 +47,23 @@ function ColorOrNotNavItem(id_div_nav_bar) {
 
 let pass;
 
-function CheckPass() {
+function DiscardAll() {
+  document.getElementById("confermaPasswordSerial").style.display = "none";
+  document.getElementById("invalidPassword2").style.display = "none";
+  document.getElementById("invalidPassword1").style.display = "none";
+  document.getElementById("validPassword1").style.display = "none";
+  document.getElementById("validPassword2").style.display = "none";
+  document.getElementById("SaveModificheSerial").style.display = "none";
+}
+
+function ViewSalvaModifiche() {
+  document.getElementById("SaveModificheSerial").style.display = "block";
+}
+
+function CheckPass(change = false) {
+  if (change) {
+    document.getElementById("confermaPasswordSerial").style.display = "block";
+  }
   pass = document.getElementById("password_field").value + "";
   if (pass.length >= 10) {
     document.getElementById("validPassword1").style.display = "flex";
@@ -50,23 +73,27 @@ function CheckPass() {
   }
   document.getElementById("validPassword1").style.display = "none";
   document.getElementById("invalidPassword1").style.display = "flex";
-  document.getElementById("password_field2").disabled = true;
+  if (document.getElementById("password_field2") != null)
+    document.getElementById("password_field2").disabled = true;
 }
 
 function CheckConfPass() {
   if (pass == document.getElementById("password_field2").value) {
     document.getElementById("validPassword2").style.display = "flex";
     document.getElementById("invalidPassword2").style.display = "none";
-    document.getElementById("btn-crea-account-serial").disabled = false;
+    if (document.getElementById("btn-crea-account-serial") != null)
+      document.getElementById("btn-crea-account-serial").disabled = false;
+
+    ViewSalvaModifiche();
     return;
   }
   document.getElementById("validPassword2").style.display = "none";
   document.getElementById("invalidPassword2").style.display = "flex";
-  document.getElementById("btn-crea-account-serial").disabled = true;
+  if (document.getElementById("btn-crea-account-serial") != null)
+    document.getElementById("btn-crea-account-serial").disabled = true;
 }
 
 function CheckCategoriaComputer(isfilter = true) {
-
   let id = isfilter ? "selectCategoriaComputer" : "selectCategoriaComputer2";
   let id2 = isfilter ? "selectTipologiaComputer" : "selectTipologiaComputer2";
   let categoria_selected = document.getElementById(id).value;
@@ -77,61 +104,55 @@ function CheckCategoriaComputer(isfilter = true) {
     document.getElementById(id2).disabled = false;
     document.getElementById(id2).selectedIndex = 0;
   }
-
 }
 
 function formatCreditCardNumber() {
-  var input = document.getElementById('inputCardNum');
-  var trimmedValue = input.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-  var formattedValue = trimmedValue.replace(/(.{4})/g, '$1 ');
+  var input = document.getElementById("inputCardNum");
+  var trimmedValue = input.value.replace(/\s+/g, "").replace(/[^0-9]/gi, "");
+  var formattedValue = trimmedValue.replace(/(.{4})/g, "$1 ");
   input.value = formattedValue.trim();
   let image = "";
-  if((input.value+"").startsWith("4")){
+  if ((input.value + "").startsWith("4")) {
     image = "visa.png";
-  }else if((input.value+"").startsWith("5")){
-    image = "master.png"
-  }else if((input.value+"").startsWith("3")){
-    image = "american-express.png"
-  }else if((input.value+"").startsWith("6")){
-    image = "discover.png"
-  }else{
+  } else if ((input.value + "").startsWith("5")) {
+    image = "master.png";
+  } else if ((input.value + "").startsWith("3")) {
+    image = "american-express.png";
+  } else if ((input.value + "").startsWith("6")) {
+    image = "discover.png";
+  } else {
     image = "";
   }
-  if(image.length > 0){
-    document.getElementById("cardTipo").innerHTML = "<img src='card-img/"+image+"' alt='' width='50' height='50'>";
-  }else{
+  if (image.length > 0) {
+    document.getElementById("cardTipo").innerHTML =
+      "<img src='card-img/" + image + "' alt='' width='50' height='50'>";
+  } else {
     document.getElementById("cardTipo").innerHTML = "credit_card";
   }
 }
 
-if(document.getElementById('inputCardNum') != null){
-  document.getElementById('inputCardNum').addEventListener('input', formatCreditCardNumber);
-  document.getElementById('scadenza_card').addEventListener('input', function(event) {
-    var inputValue = event.target.value;
-    var cleanedInputValue = inputValue.replace(/[^0-9]/g, '');
-    var formattedValue = cleanedInputValue.replace(/(\d{2})(\d{0,2})/, '$1/$2'); 
-    var month = parseInt(cleanedInputValue.substring(0, 2));
-    if (month > 12) {
-      formattedValue = formattedValue.substring(0, formattedValue.length - 1);
-    }
-    event.target.value = formattedValue;
-  });
+if (document.getElementById("inputCardNum") != null) {
+  document
+    .getElementById("inputCardNum")
+    .addEventListener("input", formatCreditCardNumber);
+  document
+    .getElementById("scadenza_card")
+    .addEventListener("input", function (event) {
+      var inputValue = event.target.value;
+      var cleanedInputValue = inputValue.replace(/[^0-9]/g, "");
+      var formattedValue = cleanedInputValue.replace(
+        /(\d{2})(\d{0,2})/,
+        "$1/$2"
+      );
+      var month = parseInt(cleanedInputValue.substring(0, 2));
+      if (month > 12) {
+        formattedValue = formattedValue.substring(0, formattedValue.length - 1);
+      }
+      event.target.value = formattedValue;
+    });
 }
 
-
-
-function SetPlan(plan1 = true){
-  var plan_html = "€ 3.00 al mese"
-  if(!plan1){
-    plan_html = "€ 24.00 all'anno / € 2.00 al mese <span class='badge text-bg-success align-top fs-7'>20% sconto</span>"
-  }
-  document.getElementById("planScelto").innerHTML = plan_html;
-  
-  
-}
-
-
-function CancellaPreferito(id_card_preferito){
+function CancellaPreferito(id_card_preferito) {
   document.getElementById(id_card_preferito).style.display = "none";
 }
 
@@ -145,17 +166,19 @@ buttons.forEach(function(button) {
 });
 */
 $(document).ready(function () {
-  $('.toast').toast();
+  $(".toast").toast();
 
-  $('.bookmark-btn').click(function () {
-      if ($(this).hasClass('clicked')) {
-        $('.toast.toast-aggiunto').html("<div class='toast-body'> <span class='material-symbols-outlined align-middle'>bookmark_remove</span>Prodotto rimosso tra i preferiti </div>");
-      } else {
-        $('.toast.toast-aggiunto').html("<div class='toast-body'> <span class='material-symbols-outlined align-middle'>bookmark_added</span>Prodotto aggiunto tra i preferiti </div>");
-      }
-      $('.toast.toast-aggiunto').toast('show');
-      $(this).toggleClass('clicked');
+  $(".bookmark-btn").click(function () {
+    if ($(this).hasClass("clicked")) {
+      $(".toast.toast-aggiunto").html(
+        "<div class='toast-body'> <span class='material-symbols-outlined align-middle'>bookmark_remove</span>Prodotto rimosso tra i preferiti </div>"
+      );
+    } else {
+      $(".toast.toast-aggiunto").html(
+        "<div class='toast-body'> <span class='material-symbols-outlined align-middle'>bookmark_added</span>Prodotto aggiunto tra i preferiti </div>"
+      );
+    }
+    $(".toast.toast-aggiunto").toast("show");
+    $(this).toggleClass("clicked");
   });
 });
-
-
